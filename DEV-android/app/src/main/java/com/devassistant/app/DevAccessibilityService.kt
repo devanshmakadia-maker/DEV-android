@@ -66,7 +66,7 @@ class DevAccessibilityService : AccessibilityService() {
     fun typeIntoElement(element: ScreenObserver.ScreenElement, text: String): Boolean {
         if (isPasswordField(element.node)) return false
         val args = Bundle().apply {
-            putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE_VALUE, text)
+               putCharSequence("ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE_VALUE", text)
         }
         return element.node.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT, args)
     }
